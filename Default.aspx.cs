@@ -21,7 +21,8 @@ public partial class Default : Page
     {
         _intermediateResult.Add("PowerAC");
         _intermediateResult.Add("EnergyAC");
-        //_intermediateResult.Add("WindSpeed");       // _intermediateResult.Add("AmbientTemperature");
+        //_intermediateResult.Add("WindSpeed");
+       // _intermediateResult.Add("AmbientTemperature");
         _intermediateResult.Add("PlaneOfArrayIrradiance");
         //   _intermediateResult.Add("ObservationType");
         if (!Page.IsPostBack)
@@ -46,11 +47,11 @@ public partial class Default : Page
 
     private async void HTTP_GET(bool particularSite = false)
     {
-        const string uri = "https://service.solaranywhere.com/api/v1/EnergySites?key=SUSY8EE4";
+        const string uri = "https://service.solaranywhere.com/api/v1/EnergySites?key={enterKey}";
 
         using (var client = new HttpClient())
         {
-            byte[] byteArray = Encoding.ASCII.GetBytes("SUSClient@smartusys.com:Sol@rSus");
+            byte[] byteArray = Encoding.ASCII.GetBytes("UserName:Password");
             var header = new AuthenticationHeaderValue(
                 "Basic", Convert.ToBase64String(byteArray));
             client.DefaultRequestHeaders.Authorization = header;
@@ -94,7 +95,7 @@ public partial class Default : Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        const string uri = "https://service.solaranywhere.com/api/v1/EnergySites?key=SUSY8EE4";
+        const string uri = "https://service.solaranywhere.com/api/v1/EnergySites?key={Key}";
         string content;
         var uri1 = (new UriBuilder(Request.Url)).Scheme + "://" + HttpContext.Current.Request.Url.Authority + Request.ApplicationPath + "/Sample.xml";
         using (var client = new WebClient())
@@ -116,7 +117,7 @@ public partial class Default : Page
 
             using (var client = new HttpClient())
             {
-                byte[] byteArray = Encoding.ASCII.GetBytes("SUSClient@smartusys.com:Sol@rSus");
+                byte[] byteArray = Encoding.ASCII.GetBytes("Username:Password");
                 var header = new AuthenticationHeaderValue(
                     "Basic", Convert.ToBase64String(byteArray));
                 client.DefaultRequestHeaders.Authorization = header;
