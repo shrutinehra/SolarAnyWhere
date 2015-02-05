@@ -234,7 +234,7 @@ public partial class Default : Page
         // string xmlString = System.IO.File.ReadAllText(@"../../Sample.xml");
         var httpContent = new StringContent(doc.InnerXml, Encoding.UTF8, "application/xml");
 
-        const string uri = "https://service.solaranywhere.com/api/v1/BulkSimulate?key=SUSY8EE4";
+        const string uri = "https://service.solaranywhere.com/api/v1/BulkSimulate?key={key}";
         GetResponse(uri, httpContent, true);
 
     }
