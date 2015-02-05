@@ -1,0 +1,33 @@
+﻿<EnergySiteCreateRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EnergySite Name="{0}" Description="{0}">
+    <Location Latitude_Degrees="{1}" Longitude_Degrees="{2}"/>
+    <PvSystems>
+      <PvSystem Albedo_Percent="17">
+        <PvSubsystems>
+          <PvSubsystem GeneralDerate_Percent="85.00">
+            <Inverters>
+              <Inverter Count="1" MaxPowerOutput_kWAC="4.470000" EfficiencyRating_Percent="97.000000"/>
+            </Inverters>
+            <PvArrays>
+              <PvArray>
+                <PvModules>
+                  <PvModule Count="20" NameplateDCRating_kWDC="0.22000" PtcRating_kWDC="0.19760" PowerTemperatureCoefficient_PercentPerDegreeC="0.4"/>
+                </PvModules>
+                <ArrayConfiguration Azimuth_Degrees="177.000" Tilt_Degrees="25.000" Tracking="Fixed Array" TrackingRotationLimit_Degrees="90"/>
+                <SolarObstructions>
+                  <SolarObstruction Azimuth_Degrees="90.000" Elevation_Degrees="33.000"/>
+                  <SolarObstruction Azimuth_Degrees="120.000" Elevation_Degrees="50.000"/>
+                  <SolarObstruction Azimuth_Degrees="150.000" Elevation_Degrees="22.000"/>
+                  <SolarObstruction Azimuth_Degrees="180.000" Elevation_Degrees="3.000"/>
+                  <SolarObstruction Azimuth_Degrees="210.000" Elevation_Degrees="1.000"/>
+                  <SolarObstruction Azimuth_Degrees="240.000" Elevation_Degrees="2.000"/>
+                  <SolarObstruction Azimuth_Degrees="270.000" Elevation_Degrees="4.000"/>
+                </SolarObstructions>
+              </PvArray>
+            </PvArrays>
+          </PvSubsystem>
+        </PvSubsystems>
+      </PvSystem>
+    </PvSystems>
+  </EnergySite>
+</EnergySiteCreateRequest>
